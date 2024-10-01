@@ -1,4 +1,4 @@
-let text = "吾輩は猫である"
+let text = document.getElementById('Pre-translation');
 let fromLang = "ja"
 let toLang = "en"
 
