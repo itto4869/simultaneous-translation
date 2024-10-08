@@ -3,25 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src='./api_key.js'></script>
     <script type="text/javascript" src='./translate_google.js'></script>
+    <link href="style.css" rel="stylesheet" type="text/css" media="all">
     <title>同時翻訳ツール「翻訳くん」</title>
 </head>
 <body>
     <header>
         <h1>同時翻訳ツール「翻訳くん」</h1>
     </header>
-    <select name="pets" id="pet-select">
-        <option value="">翻訳前言語を選択</option>
-        <option value="jp">日本語</option>
-        <option value="du">ドイツ語</option>
-        <option value="en">英語</option>
-        <option value="ch">中国語</option>
-        <option value="fr">フランス語</option>
-        <option value="ru">ロシア語</option>
-    </select>
-    <p>翻訳したい文章<br>
-        <textarea name="example2" cols="30" rows="5" id = "Pre-translation">
-        ここに翻訳する文章を入力
-        </textarea></p>
+    <div id="Pre-translation">
+        翻訳前言語を選択
+        <select name="Pre-translation-lang" id="Pre-translation-lang">
+            <option value="jp" selected>日本語</option>
+            <option value="du">ドイツ語</option>
+            <option value="en">英語</option>
+            <option value="ch">中国語</option>
+            <option value="fr">フランス語</option>
+            <option value="ru">ロシア語</option>
+        </select>
+    </div>
+    <div id="Post-translation">
+        翻訳後言語を選択
+        <select name="Post-translation-lang" id="Post-translation-lang">
+            <option value="jp">日本語</option>
+            <option value="du">ドイツ語</option>
+            <option value="en" selected>英語</option>
+            <option value="ch">中国語</option>
+            <option value="fr">フランス語</option>
+            <option value="ru">ロシア語</option>
+        </select>
+    </div>
+        <label>
+            <span class="textbox-2-label">翻訳したい文章</span><br>
+            <textarea id="Pre-translation-text" name="Pre-translation-text" cols="30" rows="5" class="Pre-translation" placeholder="ここに翻訳する文章を入力"></textarea>
+        </label>
+        <p>Googleによる翻訳結果<br>
+            <textarea name="google-translate" cols="30" rows="5" readonly></textarea></p>
+        <p>Deeplによる翻訳結果<br>
+            <textarea name="deepL-translate" cols="30" rows="5" readonly></textarea></p>
+        <p>ChatGPTによる翻訳結果<br>
+            <textarea name="chatGPT-translate" cols="30" rows="5" readonly></textarea></p>
 </body>
 </html>

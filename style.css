@@ -1,0 +1,31 @@
+/* PC用のCSSはメディアクエリの外に記述する */
+.Pre-translation-label,
+.Pre-translation {
+    color: #333;
+}
+
+.Pre-translation-label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: .9em;
+}
+
+.Pre-translation {
+    width: 30%;
+    padding: 8px 10px;
+    border: 1px solid #d2d2d2;
+    border-radius: 3px;
+    background: #f7f7f7;
+    font-size: 1em;
+    line-height: 1.5;
+}
+
+.Pre-translation::placeholder {
+    color: #999;
+}
+@media screen and (max-width: 959px) {
+	/* 959px以下に適用されるCSS（タブレット用） */
+}
+@media screen and (max-width: 480px) {
+	/* 480px以下に適用されるCSS（スマホ用） */
+}
