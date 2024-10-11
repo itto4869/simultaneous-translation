@@ -1,9 +1,12 @@
 window.onload = function () {
     let textArea = document.getElementById('Pre-translation-text');
+    let googleTextArea = document.getElementById('google-translate');
     textArea.addEventListener('keypress', () => {
         let text_value = textArea.value;
-        console.log(text_value);
-        translateText(text_value);
+        let googleTranslatedText = "iidx";
+        //googleTranslatedText = translateText(text_value);
+        console.log(googleTranslatedText);
+        googleTextArea.textContent = googleTranslatedText;
         });
   };
 function translateText(text_value) {
