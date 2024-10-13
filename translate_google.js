@@ -1,26 +1,10 @@
-window.onload = function () {
-    let textArea = document.getElementById('Pre-translation-text');
-    let googleTextArea = document.getElementById('google-translate');
-    textArea.addEventListener('keypress', () => {
-        let text_value = textArea.value;
-        let googleTranslatedText = "iidx";
-        //googleTranslatedText = translateText(text_value);
-        console.log(googleTranslatedText);
-        googleTextArea.textContent = googleTranslatedText;
-        });
-  };
-function translateText(text_value) {
-    console.log(text_value);
-    let text = text_value;
+async function translateGoogle(textValue) {
+    console.log(textValue);
+    let text = textValue;
     let fromLang = "ja";
     let toLang = "en";
 
-    const URL = "https://translation.googleapis.com/language/translate/v2?key=" + apiKey;
-
-    let xhr = new XMLHttpRequest();
-    xhr.open("POST", URL, true);
-    xhr.setRequestHeader("Content-Type", "application/json");
-
+    const URL = "https://translation.googleapis.com/language/translate/v2?key=" + apiKeyGoogle;
 
     let requestData = {
         q: text,
@@ -30,14 +14,28 @@ function translateText(text_value) {
     };
 
     console.log("翻訳前:" + text);
-    xhr.onreadystatechange = function() {
-        if (xhr.readyState === 4 && xhr.status === 200) {
-            let res = JSON.parse(xhr.responseText);
-            console.log("翻訳後:" + res.data.translations[0].translatedText);
-        } else if (xhr.readyState === 4) {
-            console.error("Error: " + xhr.status + " - " + xhr.responseText);
-        }
-    };
 
-    xhr.send(JSON.stringify(requestData));
+    // fetch APIを使ってPOSTリクエストを送信
+    try {
+        const response = await fetch(URL, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(requestData)
+        });
+        
+        if (!response.ok) {
+            throw new Error("Error: " + response.status + "-" + response.statusText);
+        }
+
+        const data = await response.json();
+        return data.data.translations[0].translatedText;
+    } catch (error) {
+        console.error("Error:", error);
+        throw error;
+    }
 }
+
+// 使用例
+// translateText("こんにちは、世界！").then(translatedText => console.log("翻訳結果: " + translatedText));
