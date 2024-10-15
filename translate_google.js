@@ -33,9 +33,6 @@ async function translateGoogle(textValue) {
         return data.data.translations[0].translatedText;
     } catch (error) {
         console.error("Error:", error);
-        throw error;
+        return "Error: " + error;
     }
 }
-
-// 使用例
-// translateText("こんにちは、世界！").then(translatedText => console.log("翻訳結果: " + translatedText));
