@@ -28,6 +28,6 @@ async function translateDeepL(textValue) {
         return data.translations[0].text;
     } catch (error) {
         console.error(error);
-        throw error;
+        return "Error: " + error;
     }
 }
