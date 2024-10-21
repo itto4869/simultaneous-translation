@@ -1,7 +1,61 @@
 /* PC用のCSSはメディアクエリの外に記述する */
-.Pre-translation-label,
+header {
+    text-align: left;
+    background-color: #fff7f7;
+    padding: 10px;
+}
+.content-area {
+    display: table;
+    width: 100%;
+}
+.Pre-translation-area {
+
+    position: relative;
+}
+.Post-translation-area {
+    display: table-cell;
+    padding: 5%;
+    width: 65%;
+}
+.Pre-translation-area textarea {
+    width: 95%;
+}
+.Post-translation-area textarea {
+    width: 100%;
+}
+
+.Pre-translation {
+    width: 30%;
+    padding: 8px 10px;
+    border: 1px solid #d2d2d2;
+    border-radius: 3px;
+    background: #f7f7f7;
+    font-size: 1em;
+    line-height: 1.5;
+}
+
+.Pre-translation::placeholder {
+    color: #999;
+}
+.content-area {
+    display: table;
+    width: 100%;
+}
+@media screen and (max-width: 959px) {
+	/* 959px以下に適用されるCSS（タブレット用） */
+    .Pre-translation-label,
 .Pre-translation {
     color: #333;
+}
+.pre-translation-area {
+    background: #000;
+    color: #fff;
+    position: relative;
+}
+.post-translation-area {
+    display: table-cell;
+    padding: 80px;
+    width: 50%;
 }
 
 .Pre-translation-label {
@@ -23,9 +77,49 @@
 .Pre-translation::placeholder {
     color: #999;
 }
-@media screen and (max-width: 959px) {
-	/* 959px以下に適用されるCSS（タブレット用） */
+.content-area {
+    display: table;
+    width: 100%;
+}
 }
 @media screen and (max-width: 480px) {
 	/* 480px以下に適用されるCSS（スマホ用） */
+    .Pre-translation-label,
+.Pre-translation {
+    color: #333;
+}
+.pre-translation-area {
+    background: #000;
+    color: #fff;
+    position: relative;
+}
+.post-translation-area {
+    display: table-cell;
+    padding: 80px;
+    width: 50%;
+}
+
+.Pre-translation-label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: .9em;
+}
+
+.Pre-translation {
+    width: 30%;
+    padding: 8px 10px;
+    border: 1px solid #d2d2d2;
+    border-radius: 3px;
+    background: #f7f7f7;
+    font-size: 1em;
+    line-height: 1.5;
+}
+
+.Pre-translation::placeholder {
+    color: #999;
+}
+.content-area {
+    display: table;
+    width: 100%;
+}
 }

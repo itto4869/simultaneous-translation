@@ -14,7 +14,8 @@
     <header>
         <h1>同時翻訳ツール「翻訳くん」</h1>
     </header>
-    <div id="Pre-translation">
+    <div class="content-area">
+    <div id="Pre-translation-lang-select">
         翻訳前言語を選択
         <select name="Pre-translation-lang" id="Pre-translation-lang">
             <option value="jp" selected>日本語</option>
@@ -25,7 +26,7 @@
             <option value="ru">ロシア語</option>
         </select>
     </div>
-    <div id="Post-translation">
+    <div id="Post-translation-lang-select">
         翻訳後言語を選択
         <select name="Post-translation-lang" id="Post-translation-lang">
             <option value="jp">日本語</option>
@@ -36,15 +37,20 @@
             <option value="ru">ロシア語</option>
         </select>
     </div>
+    <div class="Pre-translation-area">
         <label>
             <span class="textbox-2-label">翻訳したい文章</span><br>
-            <textarea id="Pre-translation-text" name="Pre-translation-text" cols="30" rows="5" class="Pre-translation" placeholder="ここに翻訳する文章を入力"></textarea>
+            <textarea id="Pre-translation-text" name="Pre-translation-text" cols="100" rows="27" class="Pre-translation" placeholder="ここに翻訳する文章を入力"></textarea>
         </label>
+    </div>
+    <div class="Post-translation-area">
         <p>Googleによる翻訳結果<br>
-            <textarea name="google-translate"id="google-translate" cols="30" rows="5" readonly></textarea></p>
+            <textarea name="google-translate"id="google-translate"  rows="9"readonly></textarea></p>
         <p>Deeplによる翻訳結果<br>
-            <textarea name="deepL-translate"id="deepL-translate" cols="30" rows="5" readonly></textarea></p>
+            <textarea name="deepL-translate"id="deepL-translate"  rows="9"readonly></textarea></p>
         <p>ChatGPTによる翻訳結果<br>
-            <textarea name="chatGPT-translate"id="chatGPT-translate" cols="30" rows="5" readonly></textarea></p>
+            <textarea name="chatGPT-translate"id="chatGPT-translate" rows="9" readonly></textarea></p>
+    </div>
+</div>
 </body>
 </html>
