@@ -1,125 +1,86 @@
-/* PC用のCSSはメディアクエリの外に記述する */
+/* style.css */
+a,a:hover,a:visited{
+    color: inherit;
+    text-decoration: none
+}
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+}
+
 header {
-    text-align: left;
-    background-color: #fff7f7;
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.content-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.lang-select-area {
+    display: flex;
+    justify-content: space-around;
+    width: 80%;
+    margin-bottom: 20px;
+}
+
+#Pre-translation-lang-select, #Post-translation-lang-select {
+    display: inline-block;
+    text-align: center;
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+select {
+    padding: 5px;
+    font-size: 14px;
+}
+
+.Pre-translation-area, .Post-translation-area {
+    width: 80%;
+    margin-bottom: 20px;
+}
+
+.textbox-2-label {
+    font-size: 18px;
+}
+
+textarea {
+    width: 100%;
     padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    resize: none;
+    margin-top: 5px;
 }
-.content-area {
-    display: table;
-    width: 100%;
-}
-.Pre-translation-area {
 
-    position: relative;
+textarea[readonly] {
+    background-color: #f9f9f9;
 }
-.Post-translation-area {
-    display: table-cell;
-    padding: 5%;
-    width: 65%;
-}
+
 .Pre-translation-area textarea {
-    width: 95%;
+    height: 300px;
 }
+
+.Post-translation-area p {
+    font-size: 16px;
+    margin: 10px 0;
+}
+
 .Post-translation-area textarea {
-    width: 100%;
-}
-
-.Pre-translation {
-    width: 30%;
-    padding: 8px 10px;
-    border: 1px solid #d2d2d2;
-    border-radius: 3px;
-    background: #f7f7f7;
-    font-size: 1em;
-    line-height: 1.5;
-}
-
-.Pre-translation::placeholder {
-    color: #999;
-}
-.content-area {
-    display: table;
-    width: 100%;
-}
-@media screen and (max-width: 959px) {
-	/* 959px以下に適用されるCSS（タブレット用） */
-    .Pre-translation-label,
-.Pre-translation {
-    color: #333;
-}
-.pre-translation-area {
-    background: #000;
-    color: #fff;
-    position: relative;
-}
-.post-translation-area {
-    display: table-cell;
-    padding: 80px;
-    width: 50%;
-}
-
-.Pre-translation-label {
-    display: block;
-    margin-bottom: 5px;
-    font-size: .9em;
-}
-
-.Pre-translation {
-    width: 30%;
-    padding: 8px 10px;
-    border: 1px solid #d2d2d2;
-    border-radius: 3px;
-    background: #f7f7f7;
-    font-size: 1em;
-    line-height: 1.5;
-}
-
-.Pre-translation::placeholder {
-    color: #999;
-}
-.content-area {
-    display: table;
-    width: 100%;
-}
-}
-@media screen and (max-width: 480px) {
-	/* 480px以下に適用されるCSS（スマホ用） */
-    .Pre-translation-label,
-.Pre-translation {
-    color: #333;
-}
-.pre-translation-area {
-    background: #000;
-    color: #fff;
-    position: relative;
-}
-.post-translation-area {
-    display: table-cell;
-    padding: 80px;
-    width: 50%;
-}
-
-.Pre-translation-label {
-    display: block;
-    margin-bottom: 5px;
-    font-size: .9em;
-}
-
-.Pre-translation {
-    width: 30%;
-    padding: 8px 10px;
-    border: 1px solid #d2d2d2;
-    border-radius: 3px;
-    background: #f7f7f7;
-    font-size: 1em;
-    line-height: 1.5;
-}
-
-.Pre-translation::placeholder {
-    color: #999;
-}
-.content-area {
-    display: table;
-    width: 100%;
-}
+    height: 80px;
+    margin-top: 5px;
 }
