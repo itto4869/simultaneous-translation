@@ -13,8 +13,6 @@ async function translateGoogle(textValue) {
         format: "text"
     };
 
-    console.log("翻訳前:" + text);
-
     // fetch APIを使ってPOSTリクエストを送信
     try {
         const response = await fetch(URL, {
