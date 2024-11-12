@@ -84,3 +84,15 @@ textarea[readonly] {
     height: 80px;
     margin-top: 5px;
 }
+.translate-button {
+    background-color: #fff;
+    border: solid 2px #333;
+    color: #333;
+    padding: 10px 30px;
+    text-decoration: none;
+    font-size: 1em;
+}
+.translate-button:hover {
+    color: #333;
+    background-color: #a0d0d6;
+}
