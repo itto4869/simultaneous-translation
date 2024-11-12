@@ -1,13 +1,8 @@
-async function translateGoogle(textValue) {
-    console.log(textValue);
-    let text = textValue;
-    let fromLang = "ja";
-    let toLang = "en";
-
+async function translateGoogle(textValue, fromLang, toLang) {
     const URL = "https://translation.googleapis.com/language/translate/v2?key=" + apiKeyGoogle;
 
     let requestData = {
-        q: text,
+        q: textValue,
         source: fromLang,
         target: toLang,
         format: "text"

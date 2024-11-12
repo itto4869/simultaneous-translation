@@ -2,15 +2,17 @@ import { translateLLM } from "./translate_llm.js";
 
 window.onload = function () {
     const textArea = document.getElementById("Pre-translation-text");
+    const selectFromLang = document.getElementById("pre-translation-lang");
+    const selectToLang = document.getElementById("post-translation-lang");
     const googleTextArea = document.getElementById("google-translate");
     const deeplTextArea = document.getElementById("deepL-translate");
     const LLMTextArea = document.getElementById("chatGPT-translate");
 
     textArea.addEventListener("keypress", async () => {
         try {
-            const googleText = await translateGoogle(textArea.value);
-            const deeplText = await translateDeepL(textArea.value);
-            const LLMText = await translateLLM(textArea.value);
+            const googleText = await translateGoogle(textArea.value, selectFromLang.value, selectToLang.value);
+            const deeplText = await translateDeepL(textArea.value, deeplMap[selectFromLang.value], deeplMap[selectToLang.value]);
+            const LLMText = await translateLLM(textArea.value, geminiMap[selectToLang.value]);
             console.log("翻訳結果 (Google): " + googleText);
             console.log("翻訳結果 (DeepL): " + deeplText);
             console.log("翻訳結果 (LLM): " + LLMText);

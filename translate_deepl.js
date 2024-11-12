@@ -1,13 +1,9 @@
-async function translateDeepL(textValue) {
-    let text = textValue;
-    let fromLang = "JA";
-    let toLang = "EN";
-
+async function translateDeepL(textValue, fromLang, toLang) {
     const URL = "https://api-free.deepl.com/v2/translate";
 
     let requestData = new URLSearchParams();
     requestData.append("auth_key", apiKeyDeepL);
-    requestData.append("text", text);
+    requestData.append("text", textValue);
     requestData.append("source_lang", fromLang);
     requestData.append("target_lang", toLang);
 
