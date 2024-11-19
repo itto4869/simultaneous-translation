@@ -1,6 +1,7 @@
 import { translateLLM } from "./translate_llm.js";
 
 window.onload = function () {
+    getResource();
     const textArea = document.getElementById("Pre-translation-text");
     const selectFromLang = document.getElementById("pre-translation-lang");
     const selectToLang = document.getElementById("post-translation-lang");
